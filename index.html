@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <section>
 <!-- NAV -->
+<div class="contenedor">
     <nav>
         <h1>Generador de Memes</h1>
         <div class="contenedor-botones">
@@ -37,26 +39,85 @@
 
         <button class="boton-descargar"><i class="fas fa-download"></i>Descargar meme</button>
     </main>
-
+</div>
 <!-- ASIDE IMAGEN -->
 
     <aside class="img-aside">
-        <p>IMAGEN</p>
+        <h3>IMAGEN</h3>
 
         <form>
-            <label>URL
-                <input type="text">
+            <div class="url">
+            <label for="url">URL
+                <input type="text" name="url" id="url">
             </label>
+            </div>
 
-            <label>FONDO
-                <input type="color">
-                <input type="select">
+            <div class="fondo">
+            <h3>FONDO</h3>
+            <div class="fondo-color">
+            <input type="color" name="color-fondo" id="color-fondo" value="#FFFFFF">
+        </div>
+        
+        
+            <select name="fondo" id="fondo">
+                <option>Ninguno</option>
+                <option>Aclarar</option>
+                <option>Oscurecer</option>
+                <option>Diferencia</option>
+                <option>Luminosidad</option>
+                <option>Multiplicar</option>
+            </select>
+        </div>
+            <h3>FILTROS</h3>
+            <div class="rango">
+                <label for="brillo">BRILLO</label>
+                <input type="range" id="brillo" min="0" max="1" value="1" step="0.1">
+            </div>
+            
+            <div class="rango">
+                <label for="opacidad">OPACIDAD</label>
+                <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1">
+            </div>
 
-            </label>
+            <div class="rango">
+                <label for="contraste">CONTRASTE</label>
+                <input type="range" id="contraste" min="100" max="1000" value="100">
+            </div>
+            
+            <div class="rango">
+                <label for="desenfoque">DESENFOQUE</label>
+                <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1">    
+            </div>
+
+            <div class="rango">
+                <label for="escala-de-grises">ESCALA DE GRISES</label>
+                <input type="range" id="escala-de-grises" min="0" max="100" value="0">
+            </div>
+
+            <div class="rango">
+                <label>SEPIA
+                <input type="range" id="sepia" min="0" max="100" value="0">
+            </div>
+
+            <div class="rango">
+                <label for="tono">TONO</label>
+                <input type="range" id="tono" min="0" max="360" value="0">
+            </div>
+
+            <div class="rango">
+                <label for="saturacion">SATURACIÓN</label>
+                <input type="range" id="saturacion" min="100" max="1000" value="100" step="10">
+            </div>
+
+            <div class="rango">
+                <label for="efecto-negativo">EFECTO NEGATIVO</label>
+                <input type="range" id="efecto-negativo" min="0" max="1" value="0" step="0.1">
+            </div>
+
         </form>
     </aside>
 
-
+</section>
 
 
 

@@ -2,7 +2,10 @@ body {
     margin: 0;
 }
 /* NAV */
-
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
 nav {
     display: flex;
     flex-direction: column;
@@ -50,6 +53,7 @@ button:hover {
 
 main {
     height: 100vh;
+    width: 1600px;
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
@@ -109,3 +113,23 @@ p {
 }
 
 /* ASIDE IMAGEN */
+section {
+    display: flex;
+}
+
+.img-aside {
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+}
+
+
+
+
+
+
+
+.rango {
+    display: flex;
+    flex-direction: column;
+}
