@@ -26,14 +26,14 @@
 <!-- SECCIÓN MAIN -->
     <main>
         <div class="contenedor-meme">
-            <div class="contenedor-texto-arriba">
-                <p class="texto-arriba">TOP TEXT</p>
+            <div class="contenedor-texto-arriba" id="contenedor-texto-arriba">
+                <p class="texto-arriba" id="texto-arriba">TOP TEXT</p>
             </div>
             <div class="contenedor-img" id="contenedor-img">
                 <img id="destino-imagen" src="">
             </div>
-            <div class="contenedor-texto-abajo">
-                <p class="texto-abajo">BOTTOM TEXT</p>
+            <div class="contenedor-texto-abajo" id="contenedor-texto-abajo">
+                <p class="texto-abajo" id="texto-abajo">BOTTOM TEXT</p>
             </div>
         </div>
     
@@ -132,7 +132,7 @@
                     placeholder="TOP TEXT">
             </div>
             <div class="sin-texto-checkbox">
-                <input type="checkbox" name="sin-texto-checkbox" id="sin-texto-checkbox">
+                <input type="checkbox" name="sin-texto-checkbox" id="sin-texto-superior-checkbox">
                 <label for="sin-texto-checkbox">Sin texto superior</label>
             </div>
     
@@ -141,7 +141,7 @@
                 <input type="textarea" name="texto-inferior" id="texto-inferior" rows="3" columns="10"
                     placeholder="BOTTOM TEXT">
                 <div class="sin-texto-checkbox">
-                    <input type="checkbox" name="sin-texto-checkbox" id="sin-texto-checkbox">
+                    <input type="checkbox" name="sin-texto-checkbox" id="sin-texto-inferior-checkbox">
                     <label for="sin-texto-checkbox">Sin texto inferior</label>
                 </div>
             </div>
@@ -167,13 +167,13 @@
                         value="40">
     
                     <div class="contenedor-botones-alineacion">
-                        <button class="alineacion-izquierda" id="alinear-izquierda">
+                        <button type="button" class="alineacion-izquierda" id="alinear-izquierda">
                             <i class="fas fa-align-left"></i>
                         </button>
-                        <button class="alineacion-centro" id="alinear-centro">
+                        <button type="button" class="alineacion-centro" id="alinear-centro">
                             <i class="fas fa-align-center"></i>
                         </button>
-                        <button class="alineacion-derecha" id="alinear-derecha">
+                        <button type="button" class="alineacion-derecha" id="alinear-derecha">
                             <i class="fas fa-align-right"></i>
                         </button>
                     </div>

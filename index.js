@@ -175,3 +175,105 @@ botonRestablecer.onclick = () => {
 }
 
 
+
+// FUNCIONALIDAD ASIDE TEXTO
+
+const inputTextoSuperior = document.getElementById("texto-superior")
+const inputTextoInferior = document.getElementById("texto-inferior")
+const resultadoTextoSuperior = document.getElementById("texto-arriba")
+const resultadoTextoInferior = document.getElementById("texto-abajo")
+
+inputTextoSuperior.oninput = () => {
+    resultadoTextoSuperior.textContent = inputTextoSuperior.value
+}
+
+inputTextoInferior.oninput = () => {
+    resultadoTextoInferior.textContent = inputTextoInferior.value
+}
+
+const divTextoArriba = document.getElementById("contenedor-texto-arriba")
+const divTextoAbajo = document.getElementById("contenedor-texto-abajo")
+const inputSinTextoArriba = document.getElementById("sin-texto-superior-checkbox")
+const inputSinTextoAbajo = document.getElementById("sin-texto-inferior-checkbox")
+
+
+inputSinTextoArriba.oninput = () => {
+    if (inputSinTextoArriba.checked) {
+        divTextoArriba.style.display = "none"
+    }
+    else {
+        divTextoArriba.style.display = "flex"
+    }
+}
+
+inputSinTextoAbajo.oninput = () => {
+    if (inputSinTextoAbajo.checked) {
+        divTextoAbajo.style.display = "none"
+    }
+    else {
+        divTextoAbajo.style.display = "flex"
+    }
+}
+
+const seleccionFuente = document.getElementById("seleccionar-fuente")
+
+seleccionFuente.oninput = () => {
+    resultadoTextoSuperior.style.fontFamily = seleccionFuente.value
+    resultadoTextoInferior.style.fontFamily = seleccionFuente.value
+}
+
+const seleccionTamanioFuente = document.getElementById("tamanio-fuente")
+
+seleccionTamanioFuente.oninput = () => {
+    resultadoTextoSuperior.style.fontSize = seleccionTamanioFuente.value + "px"
+    resultadoTextoInferior.style.fontSize = seleccionTamanioFuente.value + "px"
+}
+
+const botonAlineacionIzquierda = document.getElementById("alinear-izquierda")
+const botonAlineacionCentro = document.getElementById("alinear-centro")
+const botonAlineacionDerecha = document.getElementById("alinear-derecha")
+
+
+botonAlineacionIzquierda.onclick = () => {
+    divTextoArriba.style.justifyContent = "flex-start"
+    divTextoAbajo.style.justifyContent = "flex-start"
+}
+
+botonAlineacionCentro.onclick = () => {
+    divTextoArriba.style.justifyContent = "center"
+    divTextoAbajo.style.justifyContent = "center"
+}
+
+botonAlineacionDerecha.onclick = () => {
+    divTextoArriba.style.justifyContent = "flex-end"
+    divTextoAbajo.style.justifyContent = "flex-end"
+}
+
+
+// inputColorFondo.oninput = () => {
+//     divContenedorImagen.style.backgroundColor = inputColorFondo.value
+// }
+
+const 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const noEnviarForm = () => {
+    form.onsubmit = (event) => {
+    event.preventDefault()
+    }
+}
