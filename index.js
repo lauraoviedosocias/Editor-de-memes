@@ -174,7 +174,11 @@ botonRestablecer.onclick = () => {
     targetImagen.style.filter = "invert(0)"
 }
 
-
+const noEnviarForm = () => {
+    form.onsubmit = (event) => {
+    event.preventDefault()
+    }
+}
 
 // FUNCIONALIDAD ASIDE TEXTO
 
@@ -250,30 +254,70 @@ botonAlineacionDerecha.onclick = () => {
 }
 
 
-// inputColorFondo.oninput = () => {
-//     divContenedorImagen.style.backgroundColor = inputColorFondo.value
-// }
-
-const 
+const inputColorFuente = document.getElementById("color-fuente")
+const inputColorFondoFuente = document.getElementById("color-fondo-fuente")
 
 
+inputColorFuente.oninput = () => {
+    resultadoTextoSuperior.style.color = inputColorFuente.value
+    resultadoTextoInferior.style.color = inputColorFuente.value
+}
 
+inputColorFondoFuente.oninput = () => {
+    divTextoArriba.style.backgroundColor = inputColorFondoFuente.value
+    divTextoAbajo.style.backgroundColor = inputColorFondoFuente.value
+}
 
-
-
-
-
-
-
-
-
+const inputFondoTransparente = document.getElementById("fondo-transparente-checkbox")
 
 
 
-
-
-const noEnviarForm = () => {
-    form.onsubmit = (event) => {
-    event.preventDefault()
+inputFondoTransparente.oninput = () => {
+    if (inputFondoTransparente.checked) {
+        divTextoArriba.style.display = "none"
+        divTextoAbajo.style.display = "none"
     }
+    else {
+        divTextoArriba.style.display = "flex"
+        divTextoAbajo.style.display = "flex"
+    }
+}
+
+const inputSinContorno = document.getElementById("boton-sin-contorno")
+const inputContornoClaro = document.getElementById("boton-claro")
+const inputContornoOscuro = document.getElementById("boton-oscuro")
+
+inputSinContorno.oninput = () => {
+    resultadoTextoSuperior.style.textShadow = "none"
+    resultadoTextoInferior.style.textShadow = "none"
+}
+
+inputContornoClaro.oninput = () => {
+    resultadoTextoSuperior.style.textShadow = "2px 2px white"
+    resultadoTextoInferior.style.textShadow = "2px 2px white"
+}
+
+inputContornoOscuro.oninput = () => {
+    resultadoTextoSuperior.style.textShadow = "2px 2px black"
+    resultadoTextoInferior.style.textShadow = "2px 2px black"
+}
+
+
+
+// FUNCIONALIDAD NAV
+
+const botonAsideImagen = document.getElementById("boton-aside-imagen")
+const botonAsideTexto = document.getElementById("boton-aside-texto")
+const asideImagen = document.querySelector(".img-aside")
+const asideTexto = document.querySelector(".texto-aside")
+
+
+botonAsideTexto. onclick = () => {
+    asideImagen.style.display = "none"
+    asideTexto.style.display = "flex"
+}
+
+botonAsideImagen.onclick = () => {
+    asideTexto.style.display = "none"
+    asideImagen.style.display = "flex"
 }

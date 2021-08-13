@@ -16,9 +16,9 @@
         <h1>Generador de Memes</h1>
         <div class="contenedor-botones">
         <ul>
-            <li><button><i class="fas fa-file-image"></i>Imagen</button></li>
-            <li><button><i class="fas fa-font"></i>Texto</button></li>
-            <li><button><i class="fas fa-lightbulb"></i>Modo oscuro</button></li>
+            <li><button type="button" id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
+            <li><button type="button" id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
+            <li><button type="button" id="boton-modo"><i class="fas fa-lightbulb"></i>Modo oscuro</button></li>
         </ul>
     
     </nav>
@@ -186,7 +186,7 @@
             <div class="fuente-color-texto fondo-color">
                 <h3>COLOR</h3>
                 <div class="fondo-color-input">
-                    <input type="color" name="color-fondo" id="color-fondo" value="#FFFFFF">
+                    <input type="color" name="color-fuente" id="color-fuente" value="#FFFFFF">
                     <span id="color-fondo-codigo" aria-hidden="true">#000000</span>
                 </div>
             </div>
@@ -194,7 +194,7 @@
             <div class="fondo-color-texto fondo-color">
                 <h3>FONDO</h3>
                 <div class="fondo-color-input">
-                    <input type="color" name="color-fondo" id="color-fondo" value="#FFFFFF">
+                    <input type="color" name="color-fondo" id="color-fondo-fuente" value="#FFFFFF">
                     <span id="color-fondo-codigo" aria-hidden="true">#FFFFFF</span>
                 </div>
 
@@ -209,9 +209,9 @@
         <div class="contenedor-contorno">
             <h3>CONTORNO</h3>
             <div class="contenedor-botones-contorno">
-                <button class="boton-ninguno" id="boton-sin-contorno">Ninguno</button>
-                <button class="boton-claro" id="boton-claro">Claro</button>
-                <button class="boton-oscuro" id="boton-oscuro">Oscuro</button>
+                <button type="button" class="boton-ninguno" id="boton-sin-contorno">Ninguno</button>
+                <button type="button" class="boton-claro" id="boton-claro">Claro</button>
+                <button type="button" class="boton-oscuro" id="boton-oscuro">Oscuro</button>
             </div>
         </div>
 
