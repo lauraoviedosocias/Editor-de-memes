@@ -1,14 +1,22 @@
+
 body {
     margin: 0;
+    overflow: hidden;
 }
+
 section {
     display: flex;
+    width: 100vw;
+    height: 100vh;
 }
+
 /* NAV */
 .contenedor {
     display: flex;
     flex-direction: column;
+    width: 85%;
 }
+
 nav {
     display: flex;
     flex-direction: column;
@@ -56,7 +64,7 @@ button:hover {
 
 main {
     height: 100vh;
-    width: 1650px;
+    
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
@@ -64,9 +72,10 @@ main {
 }
 
 p {
-    font-family: 'Segoe UI';
+    font-family: Impact;
     color: #424242;
     margin: 0;
+    font-size: 40px;
 }
 
 .contenedor-texto-arriba {
@@ -132,7 +141,7 @@ img {
 
 .img-aside {
     /* height: 100vh; */
-    width: 260px;
+    width: 15%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -255,7 +264,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .texto-aside {
-    width: 260px;
+    width: 15%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -328,4 +337,47 @@ input[type="textarea"] {
 .seleccion-interlineado {
     width: 100%;
 }
+
+/* TEMA OSCURO */
+.modo-oscuro-main {
+    background-color: #30343f;
+}
+
+.modo-oscuro-nav {
+    background-color: #191e2b;
+}
+
+.modo-oscuro-titulo {
+    color: #ffffff;
+}
+
+.modo-oscuro-botones {
+    color: #ffffff;
+    background-color: #191e2b;
+}
+
+
+/* RESPONSIVE */
+
+/* @media (min-width: 1300px) {
+    .img-aside {
+      display: block;
+    }
+    .img-text {
+      display: block;
+    }
+  } */
+  
+  @media (max-width: 1600px) {
+    
+    h1 {
+        color: red;
+    }
+
+    aside {
+        display: none;
+    }
+  }
+   
+
 

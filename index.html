@@ -7,13 +7,15 @@
     <title>Generador de Memes</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
 </head>
 <body>
     <section>
 <!-- NAV -->
 <div class="contenedor">
     <nav>
-        <h1>Generador de Memes</h1>
+        <h1 id="titulo">Generador de Memes</h1>
         <div class="contenedor-botones">
         <ul>
             <li><button type="button" id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
@@ -25,7 +27,7 @@
 
 <!-- SECCIÓN MAIN -->
     <main>
-        <div class="contenedor-meme">
+        <div class="contenedor-meme" id="contenedor-meme">
             <div class="contenedor-texto-arriba" id="contenedor-texto-arriba">
                 <p class="texto-arriba" id="texto-arriba">TOP TEXT</p>
             </div>
@@ -37,7 +39,7 @@
             </div>
         </div>
     
-        <button class="boton-descargar"><i class="fas fa-download"></i>Descargar meme</button>
+        <button class="boton-descargar" id="boton-descargar"><i class="fas fa-download"></i>Descargar meme</button>
     </main>
 </div>
 <!-- ASIDE IMAGEN -->
@@ -114,7 +116,7 @@
                 <label for="efecto-negativo">EFECTO NEGATIVO</label>
                 <input type="range" id="efecto-negativo" min="0" max="1" value="0" step="0.1">
             </div>
-            <button class="boton-restablecer" id="boton-restablecer">Restablecer filtros</button>
+            <button type="button" class="boton-restablecer" id="boton-restablecer">Restablecer filtros</button>
         </form>
 
         
@@ -249,5 +251,6 @@
 
 
     <script src="index.js"></script>
+
 </body>
 </html>

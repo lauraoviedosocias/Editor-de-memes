@@ -23,141 +23,41 @@ const rangoTono = document.getElementById("tono")
 const rangoSaturacion = document.getElementById("saturacion")
 const rangoNegativo = document.getElementById("efecto-negativo")
 
-console.log(rangoBrillo.value)
-
-// const filtroBrillo = () => {
-   
-// }
 
 rangoBrillo.oninput = () => {
-    // console.log(rangoBrillo.value)
-    if (rangoBrillo.value == 0.1) {
-        console.log("el input es 0.1")
-        targetImagen.style.filter = "brightness(0.1)"
-    }
-    else if (rangoBrillo.value == 0.5) {
-        console.log("el input es 0.5")
-        targetImagen.style.filter = "brightness(0.5)"
-    }
-    else if (rangoBrillo.value == 1) {
-        console.log("el input es 1")
-        targetImagen.style.filter = "brightness(1)"
-    }
+    targetImagen.style.filter = `brightness(${rangoBrillo.value})`
 }
 
 rangoOpacidad.oninput = () => {
-    if (rangoOpacidad.value == 0.1) {
-        console.log("el input es 0.1")
-        targetImagen.style.filter = "opacity(0.1)"
-    }
-    else if (rangoOpacidad.value == 0.5) {
-        console.log("el input es 0.5")
-        targetImagen.style.filter = "opacity(0.5)"
-    }
-    else if (rangoOpacidad.value == 1) {
-        console.log("el input es 1")
-        targetImagen.style.filter = "opacity(1)"
-    }
+    targetImagen.style.filter = `opacity(${rangoOpacidad.value})`
 }
 
 rangoContraste.oninput = () => {
-    if (rangoContraste.value == 100) {
-        targetImagen.style.filter = "contrast(100)"
-    }
-    else if (rangoContraste.value == 500) {
-        targetImagen.style.filter = "contrast(500)"
-    }
-    else if (rangoContraste.value == 1000) {
-        targetImagen.style.filter = "contrast(1000)"
-    }
-    else if (rangoContraste.value == 0) {
-        targetImagen.style.filter = "contrast(0)"
-    }
+    targetImagen.style.filter = `contrast(${rangoContraste.value}%)`
 }
 
-
 rangoDesenfoque.oninput = () => {
-    console.log(rangoDesenfoque.value)
-    if (rangoDesenfoque.value == 0) {
-        targetImagen.style.filter = "blur(0)"
-    }
-    else if (rangoDesenfoque.value == 5) {
-        targetImagen.style.filter = "blur(5px)"
-    }
-    else if (rangoDesenfoque.value == 10) {
-        targetImagen.style.filter = "blur(10px)"
-    }
+    targetImagen.style.filter = `blur(${rangoDesenfoque.value}px)`
 }
 
 rangoGrises.oninput = () => {
-    console.log(rangoGrises.value)
-    if (rangoGrises.value == 100) {
-        targetImagen.style.filter = "grayscale(100)"
-    }
-    else if (rangoGrises.value == 500) {
-        targetImagen.style.filter = "grayscale(500)"
-    }
-    else if (rangoGrises.value == 1000) {
-        targetImagen.style.filter = "grayscale(1000)"
-    }
-    else if (rangoGrises.value == 0) {
-        targetImagen.style.filter = "grayscale(0)"
-    }
+    targetImagen.style.filter = `grayScale(${rangoGrises.value}%)`
 }
 
 rangoSepia.oninput = () => {
-    if (rangoSepia.value == 100) {
-        targetImagen.style.filter = "sepia(100)"
-    }
-    else if (rangoSepia.value == 500) {
-        targetImagen.style.filter = "sepia(500)"
-    }
-    else if (rangoSepia.value == 1000) {
-        targetImagen.style.filter = "sepia(1000)"
-    }
-    else if (rangoSepia.value == 0) {
-        targetImagen.style.filter = "sepia(0)"
-    }
+    targetImagen.style.filter = `sepia(${rangoSepia.value}%)`
 }
 
 rangoTono.oninput = () => {
-    console.log(rangoTono.value)
-    if (rangoTono.value == 90) {
-        targetImagen.style.filter = "hue-rotate(90deg)"
-    }
-    else if (rangoTono.value == 180) {
-        targetImagen.style.filter = "hue-rotate(180deg)"
-    }
-    else if (rangoTono.value == 359) {
-        targetImagen.style.filter = "hue-rotate(359deg)"
-    }
+    targetImagen.style.filter = `hue-rotate(${rangoTono.value}deg)`
 }
 
 rangoSaturacion.oninput = () => {
-    if (rangoSaturacion.value == 100) {
-        targetImagen.style.filter = "saturate(100)"
-    }
-    else if (rangoSaturacion.value == 500) {
-        targetImagen.style.filter = "saturate(500)"
-    }
-    else if (rangoSaturacion.value == 1000) {
-        targetImagen.style.filter = "saturate(1000)"
-    }
-    else if (rangoSaturacion.value == 0) {
-        targetImagen.style.filter = "saturate(0)"
-    }
+    targetImagen.style.filter = `saturate(${rangoSaturacion.value}%)`
 }
 
 rangoNegativo.oninput = () => {
-    if (rangoNegativo.value == 0.1) {
-        targetImagen.style.filter = "invert(0.1)"
-    }
-    else if (rangoNegativo.value == 0.5) {
-        targetImagen.style.filter = "invert(0.5)"
-    }
-    else if (rangoNegativo.value == 1) {
-        targetImagen.style.filter = "invert(1)"
-    }
+    targetImagen.style.filter = `invert(${rangoContraste.value}%)`
 }
 
 const botonRestablecer = document.getElementById("boton-restablecer")
@@ -274,12 +174,13 @@ const inputFondoTransparente = document.getElementById("fondo-transparente-check
 
 inputFondoTransparente.oninput = () => {
     if (inputFondoTransparente.checked) {
-        divTextoArriba.style.display = "none"
-        divTextoAbajo.style.display = "none"
+        divTextoArriba.style.backgroundColor = "transparent"
+        divTextoAbajo.style.backgroundColor = "transparent"
+        resultadoTextoSuperior.style.position = "relative"
     }
     else {
-        divTextoArriba.style.display = "flex"
-        divTextoAbajo.style.display = "flex"
+        divTextoArriba.style.position = "static"
+        divTextoAbajo.style.position = "static"
     }
 }
 
@@ -287,22 +188,34 @@ const inputSinContorno = document.getElementById("boton-sin-contorno")
 const inputContornoClaro = document.getElementById("boton-claro")
 const inputContornoOscuro = document.getElementById("boton-oscuro")
 
-inputSinContorno.oninput = () => {
+inputSinContorno.onclick = () => {
     resultadoTextoSuperior.style.textShadow = "none"
     resultadoTextoInferior.style.textShadow = "none"
 }
 
-inputContornoClaro.oninput = () => {
-    resultadoTextoSuperior.style.textShadow = "2px 2px white"
-    resultadoTextoInferior.style.textShadow = "2px 2px white"
+inputContornoClaro.onclick = () => {
+    resultadoTextoSuperior.style.textShadow = "2px 2px #FFF, 2px 2px #FFF, 2px 2px #FFF, 2px 2px #FFF"
+    resultadoTextoInferior.style.textShadow = "2px 2px #FFF, 2px 2px #FFF, 2px 2px #FFF, 2px 2px #FFF"
 }
 
-inputContornoOscuro.oninput = () => {
-    resultadoTextoSuperior.style.textShadow = "2px 2px black"
-    resultadoTextoInferior.style.textShadow = "2px 2px black"
+inputContornoOscuro.onclick = () => {
+    resultadoTextoSuperior.style.textShadow = "2px 2px #000, 2px 2px #000, 2px 2px #000, 2px 2px #000"
+    resultadoTextoInferior.style.textShadow = "2px 2px #000, 2px 2px #000, 2px 2px #000, 2px 2px #000"
 }
 
+const inputEspaciado = document.getElementById("tamanio-espaciado")
 
+inputEspaciado.oninput = () => {
+    divTextoArriba.style.paddingBottom = inputEspaciado.value + "px"
+    divTextoAbajo.style.paddingTop = inputEspaciado.value + "px"
+}
+
+const inputInterlineado = document.getElementById("seleccionar-interlineado")
+console.log(inputInterlineado)
+inputInterlineado.oninput = () => {
+    resultadoTextoSuperior.style.lineHeight = inputInterlineado.value
+    resultadoTextoInferior.style.lineHeight = inputInterlineado.value
+}
 
 // FUNCIONALIDAD NAV
 
@@ -320,4 +233,41 @@ botonAsideTexto. onclick = () => {
 botonAsideImagen.onclick = () => {
     asideTexto.style.display = "none"
     asideImagen.style.display = "flex"
+}
+
+// MODO OSCURO
+
+const botonModoOscuro = document.getElementById("boton-modo")
+const main = document.querySelector("main")
+const nav = document.querySelector("nav")
+const titulo = document.getElementById("titulo")
+const iconoImagen = document.querySelector(".fa-file-image")
+const iconoTexto = document.querySelector(".fa-font")
+const iconoModo = document.querySelector(".fa-lightbulb")
+
+
+botonModoOscuro.onclick = () => {
+    main.classList.toggle("modo-oscuro-main")
+    nav.classList.toggle("modo-oscuro-nav")
+    titulo.classList.toggle("modo-oscuro-titulo")
+    botonAsideImagen.classList.toggle("modo-oscuro-botones")
+    botonAsideTexto.classList.toggle("modo-oscuro-botones")
+    botonModoOscuro.classList.toggle("modo-oscuro-botones")
+    iconoImagen.classList.toggle("modo-oscuro-botones")
+    iconoTexto.classList.toggle("modo-oscuro-botones")
+    iconoModo.classList.toggle("modo-oscuro-botones")
+}
+
+
+// DESCARGAR IMAGEN
+
+const botonDescargar = document.getElementById("boton-descargar")
+console.log(botonDescargar)
+const contenedorMeme = document.getElementById("contenedor-meme")
+
+botonDescargar.onclick = () => {
+    domtoimage.toBlob(contenedorMeme)
+    .then(function (blob) {
+        window.saveAs(blob, 'mi-meme.png');
+    });
 }
