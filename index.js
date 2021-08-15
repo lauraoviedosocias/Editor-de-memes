@@ -1,10 +1,9 @@
 const inputImagen = document.getElementById("url");
-const targetImagen = document.getElementById("destino-imagen");
+
 
 inputImagen.oninput = () => {
-    targetImagen.src = inputImagen.value
+    divContenedorImagen.style.backgroundImage = `url("${inputImagen.value}")`
 }
-
 
 const inputColorFondo = document.getElementById("color-fondo")
 const divContenedorImagen = document.getElementById("contenedor-img")
@@ -12,6 +11,16 @@ const divContenedorImagen = document.getElementById("contenedor-img")
 inputColorFondo.oninput = () => {
     divContenedorImagen.style.backgroundColor = inputColorFondo.value
 }
+
+const inputMezclaFondo = document.getElementById("mezcla-fondo")
+
+
+inputMezclaFondo.oninput = () => {
+    divContenedorImagen.style.backgroundBlendMode = inputMezclaFondo.value
+}
+
+
+// FILTROS
 
 const rangoBrillo = document.getElementById("brillo")
 const rangoOpacidad = document.getElementById("opacidad")
@@ -25,53 +34,53 @@ const rangoNegativo = document.getElementById("efecto-negativo")
 
 
 rangoBrillo.oninput = () => {
-    targetImagen.style.filter = `brightness(${rangoBrillo.value})`
+    divContenedorImagen.style.filter = `brightness(${rangoBrillo.value})`
 }
 
 rangoOpacidad.oninput = () => {
-    targetImagen.style.filter = `opacity(${rangoOpacidad.value})`
+    divContenedorImagen.style.filter = `opacity(${rangoOpacidad.value})`
 }
 
 rangoContraste.oninput = () => {
-    targetImagen.style.filter = `contrast(${rangoContraste.value}%)`
+    divContenedorImagen.style.filter = `contrast(${rangoContraste.value}%)`
 }
 
 rangoDesenfoque.oninput = () => {
-    targetImagen.style.filter = `blur(${rangoDesenfoque.value}px)`
+    divContenedorImagen.style.filter = `blur(${rangoDesenfoque.value}px)`
 }
 
 rangoGrises.oninput = () => {
-    targetImagen.style.filter = `grayScale(${rangoGrises.value}%)`
+    divContenedorImagen.style.filter = `grayScale(${rangoGrises.value}%)`
 }
 
 rangoSepia.oninput = () => {
-    targetImagen.style.filter = `sepia(${rangoSepia.value}%)`
+    divContenedorImagen.style.filter = `sepia(${rangoSepia.value}%)`
 }
 
 rangoTono.oninput = () => {
-    targetImagen.style.filter = `hue-rotate(${rangoTono.value}deg)`
+    divContenedorImagen.style.filter = `hue-rotate(${rangoTono.value}deg)`
 }
 
 rangoSaturacion.oninput = () => {
-    targetImagen.style.filter = `saturate(${rangoSaturacion.value}%)`
+    divContenedorImagen.style.filter = `saturate(${rangoSaturacion.value}%)`
 }
 
 rangoNegativo.oninput = () => {
-    targetImagen.style.filter = `invert(${rangoContraste.value}%)`
+    divContenedorImagen.style.filter = `invert(${rangoNegativo.value})`
 }
 
 const botonRestablecer = document.getElementById("boton-restablecer")
 
 botonRestablecer.onclick = () => {
-    targetImagen.style.filter = "brightness(0)"
-    targetImagen.style.filter = "opacity(0)"
-    targetImagen.style.filter = "contrast(0)"
-    targetImagen.style.filter = "blur(0)"
-    targetImagen.style.filter = "grayscale(0)"
-    targetImagen.style.filter = "sepia(0)"
-    targetImagen.style.filter = "hue-rotate(0)"
-    targetImagen.style.filter = "saturate(0)"
-    targetImagen.style.filter = "invert(0)"
+    divContenedorImagen.style.filter = "brightness(0)"
+    divContenedorImagen.style.filter = "opacity(0)"
+    divContenedorImagen.style.filter = "contrast(0)"
+    divContenedorImagen.style.filter = "blur(0)"
+    divContenedorImagen.style.filter = "grayscale(0)"
+    divContenedorImagen.style.filter = "sepia(0)"
+    divContenedorImagen.style.filter = "hue-rotate(0)"
+    divContenedorImagen.style.filter = "saturate(0)"
+    divContenedorImagen.style.filter = "invert(0)"
 }
 
 const noEnviarForm = () => {
@@ -95,27 +104,26 @@ inputTextoInferior.oninput = () => {
     resultadoTextoInferior.textContent = inputTextoInferior.value
 }
 
-const divTextoArriba = document.getElementById("contenedor-texto-arriba")
-const divTextoAbajo = document.getElementById("contenedor-texto-abajo")
+
 const inputSinTextoArriba = document.getElementById("sin-texto-superior-checkbox")
 const inputSinTextoAbajo = document.getElementById("sin-texto-inferior-checkbox")
 
 
 inputSinTextoArriba.oninput = () => {
     if (inputSinTextoArriba.checked) {
-        divTextoArriba.style.display = "none"
+        resultadoTextoSuperior.style.display = "none"
     }
     else {
-        divTextoArriba.style.display = "flex"
+        resultadoTextoSuperior.style.display = "flex"
     }
 }
 
 inputSinTextoAbajo.oninput = () => {
     if (inputSinTextoAbajo.checked) {
-        divTextoAbajo.style.display = "none"
+        resultadoTextoInferior.style.display = "none"
     }
     else {
-        divTextoAbajo.style.display = "flex"
+        resultadoTextoInferior.style.display = "flex"
     }
 }
 
@@ -139,18 +147,18 @@ const botonAlineacionDerecha = document.getElementById("alinear-derecha")
 
 
 botonAlineacionIzquierda.onclick = () => {
-    divTextoArriba.style.justifyContent = "flex-start"
-    divTextoAbajo.style.justifyContent = "flex-start"
+    contenedorMeme.style.alignItems = "flex-start"
+    contenedorMeme.style.alignItems = "flex-start"
 }
 
 botonAlineacionCentro.onclick = () => {
-    divTextoArriba.style.justifyContent = "center"
-    divTextoAbajo.style.justifyContent = "center"
+    contenedorMeme.style.alignItems = "center"
+    contenedorMeme.style.alignItems = "center"
 }
 
 botonAlineacionDerecha.onclick = () => {
-    divTextoArriba.style.justifyContent = "flex-end"
-    divTextoAbajo.style.justifyContent = "flex-end"
+    contenedorMeme.style.alignItems = "flex-end"
+    contenedorMeme.style.alignItems = "flex-end"
 }
 
 
@@ -164,8 +172,7 @@ inputColorFuente.oninput = () => {
 }
 
 inputColorFondoFuente.oninput = () => {
-    divTextoArriba.style.backgroundColor = inputColorFondoFuente.value
-    divTextoAbajo.style.backgroundColor = inputColorFondoFuente.value
+    contenedorMeme.style.backgroundColor = inputColorFondoFuente.value
 }
 
 const inputFondoTransparente = document.getElementById("fondo-transparente-checkbox")
@@ -174,13 +181,17 @@ const inputFondoTransparente = document.getElementById("fondo-transparente-check
 
 inputFondoTransparente.oninput = () => {
     if (inputFondoTransparente.checked) {
-        divTextoArriba.style.backgroundColor = "transparent"
-        divTextoAbajo.style.backgroundColor = "transparent"
-        resultadoTextoSuperior.style.position = "relative"
+        contenedorMeme.style.backgroundColor = "transparent"
+        resultadoTextoSuperior.style = "position:relative; top:70px;"
+        resultadoTextoInferior.style = "position:relative; bottom:70px;"
+        
+        // contenedorMeme.style.justifyContent = "space-between"
+
     }
     else {
-        divTextoArriba.style.position = "static"
-        divTextoAbajo.style.position = "static"
+        contenedorMeme.style.backgroundColor = "#ffffff"
+        resultadoTextoSuperior.style = "position:static"
+        resultadoTextoInferior.style = "position:static"
     }
 }
 
@@ -206,12 +217,11 @@ inputContornoOscuro.onclick = () => {
 const inputEspaciado = document.getElementById("tamanio-espaciado")
 
 inputEspaciado.oninput = () => {
-    divTextoArriba.style.paddingBottom = inputEspaciado.value + "px"
-    divTextoAbajo.style.paddingTop = inputEspaciado.value + "px"
+    resultadoTextoSuperior.style.paddingBottom = inputEspaciado.value + "px"
+    resultadoTextoInferior.style.paddingTop = inputEspaciado.value + "px"
 }
 
 const inputInterlineado = document.getElementById("seleccionar-interlineado")
-console.log(inputInterlineado)
 inputInterlineado.oninput = () => {
     resultadoTextoSuperior.style.lineHeight = inputInterlineado.value
     resultadoTextoInferior.style.lineHeight = inputInterlineado.value
@@ -262,7 +272,6 @@ botonModoOscuro.onclick = () => {
 // DESCARGAR IMAGEN
 
 const botonDescargar = document.getElementById("boton-descargar")
-console.log(botonDescargar)
 const contenedorMeme = document.getElementById("contenedor-meme")
 
 botonDescargar.onclick = () => {

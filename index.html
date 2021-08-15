@@ -28,22 +28,22 @@
 <!-- SECCIÓN MAIN -->
     <main>
         <div class="contenedor-meme" id="contenedor-meme">
-            <div class="contenedor-texto-arriba" id="contenedor-texto-arriba">
+            <!-- <div class="contenedor-texto-arriba" id="contenedor-texto-arriba"> -->
                 <p class="texto-arriba" id="texto-arriba">TOP TEXT</p>
-            </div>
+            <!-- </div> -->
             <div class="contenedor-img" id="contenedor-img">
-                <img id="destino-imagen" src="">
+                <!-- <img id="destino-imagen" src=""> -->
             </div>
-            <div class="contenedor-texto-abajo" id="contenedor-texto-abajo">
+            <!-- <div class="contenedor-texto-abajo" id="contenedor-texto-abajo"> -->
                 <p class="texto-abajo" id="texto-abajo">BOTTOM TEXT</p>
-            </div>
+            <!-- </div> -->
         </div>
     
         <button class="boton-descargar" id="boton-descargar"><i class="fas fa-download"></i>Descargar meme</button>
     </main>
 </div>
 <!-- ASIDE IMAGEN -->
-
+<div class="ambos-aside">
     <aside class="img-aside">
         <h1 class="titulo-aside">IMAGEN</h1>
 
@@ -60,13 +60,13 @@
                     <input type="color" name="color-fondo" id="color-fondo" value="#FFFFFF">
                     <span id="color-fondo-codigo" aria-hidden="true">#FFFFFF</span>
                 </div>
-                    <select name="fondo" id="fondo">
-                        <option>Ninguno</option>
-                        <option>Aclarar</option>
-                        <option>Oscurecer</option>
-                        <option>Diferencia</option>
-                        <option>Luminosidad</option>
-                        <option>Multiplicar</option>
+                    <select name="mezcla-fondo" id="mezcla-fondo">
+                        <option value="normal">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
                     </select>
                 </div>
             </div>
@@ -237,7 +237,7 @@
         </form>
         
     </aside>
-
+</div>
 </section>
 
 
