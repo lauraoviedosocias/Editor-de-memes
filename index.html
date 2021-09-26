@@ -28,9 +28,11 @@
 <!-- SECCIÓN MAIN -->
     <main>
         <div class="contenedor-meme" id="contenedor-meme">
+            <!-- no dejes codigo comentado en una entrega -->
             <!-- <div class="contenedor-texto-arriba" id="contenedor-texto-arriba"> -->
                 <p class="texto-arriba" id="texto-arriba">TOP TEXT</p>
             <!-- </div> -->
+            <!-- el usuario con lector de pantalla necesita un aria-label aqui -->
             <div class="contenedor-img" id="contenedor-img">
                 <!-- <img id="destino-imagen" src=""> -->
             </div>
@@ -49,6 +51,7 @@
 
         <form>
             <div class="url">
+                <!-- esto no es un titulo, es un label. mas alla de su estilado, debemos ver su funcion -->
                 <h3>URL</h3>
                 <input type="text" name="url" id="url" aria-label="URL de imagen">
             </div>
@@ -61,6 +64,7 @@
                     <input type="color" name="color-fondo" id="color-fondo" value="#FFFFFF" aria-label="Color de fondo de imagen"></label>
                     <span id="color-fondo-codigo" aria-hidden="true">#FFFFFF</span>
                 </div>
+                <!-- los label no necesitan aria-label -->
                 <label for="mezcla-fondo" aria-label="mezcla de fondo">
                     <select name="mezcla-fondo" id="mezcla-fondo" aria-label="Modo de mezcla de fondo de imagen">
                         <option value="normal">Ninguno</option>

@@ -21,6 +21,33 @@ inputMezclaFondo.oninput = () => {
 
 
 // FILTROS
+//RANGE FILTROS 
+// El problema de resolver la funcionalidad de esta manera es que los filtros se pisan entre si
+// Al decir "divContenedorImagen.style.filter = " estoy diciendo "va a ser igual a esto, y reemplazar 
+// cualquier valor que tuviera antes" 
+// Por eso si establezco un brillo, y despues opacidad, el valor del brillo se pierde
+// Una manera de resolverlo es asignar todas las variables a la vez:
+
+// const cambiarFiltros = () => {
+//     divContenedorImagen.style.filter = `
+//     brightness(${rangoBrillo.value}) opacity(${rangoOpacidad.value}) 
+//     blur(${rangoDesenfoque.value}px) contrast(${rangoConstraste.value}%) 
+//     grayscale(${rangoEscalaDeGrises.value}%) hue-rotate(${rangoHue.value}deg) 
+//     sepia(${rangoSepia.value}%) saturate(${rangoSaturado.value}%) invert(${rangoNegativo.value})
+//     `;
+// }
+
+// Y despues, cada funcion onchange llama a la misma: 
+
+// rangoBrillo.onchange =  cambiarFiltros
+// rangoOpacidad.onchange = cambiarFiltros
+// rangoConstraste.onchange =  cambiarFiltros
+// rangoDesenfoque.onchange =  cambiarFiltros
+// rangoEscalaDeGrises.onchange = cambiarFiltros
+// rangoSepia.onchange =  cambiarFiltros
+// rangoHue.onchange = cambiarFiltros
+// rangoSaturado.onchange = cambiarFiltros
+// rangoNegativo.onchange = cambiarFiltros
 
 const rangoBrillo = document.getElementById("brillo")
 const rangoOpacidad = document.getElementById("opacidad")
@@ -72,6 +99,10 @@ rangoNegativo.oninput = () => {
 const botonRestablecer = document.getElementById("boton-restablecer")
 
 botonRestablecer.onclick = () => {
+    // Aqui toma en cuenta que tus filtros se pisan como comenté más arriba
+    // Pero ademas, necesitas tambien que tus filtros vuelvan al valor original
+    // Es decir, rangoTono, por ejemplo, debe volver a tener un value de 0deg, 
+    // rangoNegativo debe volver a tener un value de 0, etc
     divContenedorImagen.style.filter = "brightness(0)"
     divContenedorImagen.style.filter = "opacity(0)"
     divContenedorImagen.style.filter = "contrast(0)"
@@ -83,6 +114,7 @@ botonRestablecer.onclick = () => {
     divContenedorImagen.style.filter = "invert(0)"
 }
 
+// no entiendo esta function. nadie la llama, nunca se ejecuta 
 const noEnviarForm = () => {
     form.onsubmit = (event) => {
     event.preventDefault()
@@ -257,6 +289,12 @@ const iconoModo = document.querySelector(".fa-lightbulb")
 
 
 botonModoOscuro.onclick = () => {
+    // Esta manera de implementar el modo oscuro / claro es correcta, pero creo que no es escalable. 
+// Es decir, a futuro, si tu web crece, se le agregan secciones, etc, va a ser imposible
+// seguir agregando cosas a esta funcion. 
+// Una alternativa mas escalable es la que menciono en las observaciones: darle una clase al body cuando 
+// se agrega modo-oscuro o modo-claro, y en el CSS darle estilos distintos a los descendientes 
+// Si te genera dudas como hacerlo no dejes de escribirme. 
     main.classList.toggle("modo-oscuro-main")
     nav.classList.toggle("modo-oscuro-nav")
     titulo.classList.toggle("modo-oscuro-titulo")
